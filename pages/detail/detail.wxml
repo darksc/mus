@@ -1,0 +1,13 @@
+<view class="container detail-wrap">
+  <view class="detail-title">
+    {{title}}
+  </view>
+  <swiper>
+    <swiper-item>
+      <image src="http://img.ui.cn/data/file/7/9/7/1191797.png" class="slide-image" width="355" height="150"/>
+    </swiper-item>
+    <swiper-item>
+      <image src="http://img.ui.cn/data/file/7/9/7/1191797.png" class="slide-image" width="355" height="150"/>
+    </swiper-item>
+  </swiper>
+</view>
