@@ -88,7 +88,7 @@ Page({
     this.setData({
       controls: [
         {
-          id: 'ratingClick',
+          id: 'centerMarkerClick',
           position: {
             top: height - height / 2 - 30,
             left: width - width / 2 - 15,
@@ -96,6 +96,17 @@ Page({
             height: 30
           },
           iconPath: '/resources/User Location-64.png'
+        },
+        {
+          id: 'loactionClick',
+          position: {
+            top: height - 60,
+            left: 30,
+            width: 30,
+            height: 30
+          },
+          iconPath: '/resources/Compass-48.png',
+          clickable: true
         }
       ]
     })
@@ -104,10 +115,16 @@ Page({
   controltap (e) {
     this[e.controlId]()
   },
-  // rating 控件点击事件处理
-  ratingClick () {
-    wx.navigateTo({
-      url: '/pages/detail/detail'
+  // 定位到我的位置
+  loactionClick () {
+    let _this = this
+    let map = wx.createMapContext('map')
+    map.moveToLocation()
+    // 重新加载附近点
+    wx.getLocation({
+      success: function (res) {
+        _this.setLocation(res)
+      }
     })
   }
 })
