@@ -74,6 +74,7 @@ Page({
   getLocation () {
     let _this = this
     wx.getLocation({
+      type: 'gcj02 ',
       success(res) {
         _this.setLocation(res)
       }

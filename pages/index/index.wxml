@@ -11,7 +11,7 @@
     </view>
     <view class="weui-tab__panel">
       <view class="weui-tab__content tab-content" hidden="{{activeIndex != 0}}">
-        <map id="map" longitude="{{longitude}}" latitude="{{latitude}}" markers="{{markers}}" controls="{{controls}}" scale="1" bindcontroltap="controltap" bindmarkertap="markertap" bindregionchange="regionchange" show-location></map>
+        <map id="map" longitude="{{longitude}}" latitude="{{latitude}}" markers="{{markers}}" controls="{{controls}}" scale="10" bindcontroltap="controltap" bindmarkertap="markertap" bindregionchange="regionchange" show-location></map>
       </view>
       <view class="weui-tab__content tab-content" hidden="{{activeIndex != 1}}">
         <view class="weui-search-bar">
