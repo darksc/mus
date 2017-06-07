@@ -25,6 +25,7 @@ App({
     }
   },
   globalData:{
-    userInfo:null
+    userInfo:null,
+    url: 'https://www.easy-mock.com/mock/5937522591470c0ac106a9f1/mus'
   }
 })

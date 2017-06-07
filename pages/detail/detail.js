@@ -1,3 +1,4 @@
+var app = getApp()
 Page({
   data: {
     title: ''
@@ -10,12 +11,10 @@ Page({
     this.setData({
       title: '详情页面' + option.id
     })
-
-    setTimeout(function () {
-      wx.hideLoading()
-    }, 2000)
   },
   onPullDownRefresh: function () {
-    wx.stopPullDownRefresh()
+    setTimeout(function () {
+      wx.stopPullDownRefresh()
+    }, 3000)
   }
 })

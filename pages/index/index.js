@@ -1,4 +1,5 @@
 //index.js
+var app = getApp()
 var sliderWidth = 96;
 
 Page({
@@ -19,7 +20,10 @@ Page({
     sliderLeft: 0,
 
     inputShowed: false,
-    inputVal: ""
+    inputVal: "",
+
+    // 列表数据
+    lists: []
   },
   onLoad: function () {
     var _this = this;
@@ -36,6 +40,28 @@ Page({
   onReady () {
     this.getLocation()
     this.setControls()
+
+    this.getShops()
+  },
+  getShops(params) {
+    var _this = this
+    wx.request({
+      url: app.globalData.url + '/shops',
+      data: {
+        x: '',
+        y: ''
+      },
+      header: {
+        'content-type': 'application/json'
+      },
+      success: function (res) {
+        if (res.statusCode == 200) {
+          _this.setData({
+            lists: res.data.data
+          })
+        }
+      }
+    })
   },
   // 标签卡 点击事件
   tabClick: function (e) {

@@ -6,7 +6,8 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "black",
+    "backgroundColor": "#2284AE",
+    "navigationBarBackgroundColor": "#2284AE",
     "navigationBarTitleText": "村级食品",
     "navigationBarTextStyle": "#000"
   }
