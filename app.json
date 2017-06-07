@@ -1,12 +1,13 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
-    "pages/detail/detail"
+    "pages/detail/detail",
+    "pages/list/list"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "black",
     "navigationBarTitleText": "村级食品",
-    "navigationBarTextStyle":"#000"
+    "navigationBarTextStyle": "#000"
   }
 }

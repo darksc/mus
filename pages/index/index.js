@@ -1,4 +1,6 @@
 //index.js
+var sliderWidth = 96;
+
 Page({
   // 页面初始数据
   data: {
@@ -9,12 +11,38 @@ Page({
       id: 0,
       latitude: 39.90403,
       longitude: 116.407526
-    }]
+    }],
+
+    tabs: ["地图", "列表"],
+    activeIndex: 0,
+    sliderOffset: 0,
+    sliderLeft: 0,
+
+    inputShowed: false,
+    inputVal: ""
+  },
+  onLoad: function () {
+    var _this = this;
+    wx.getSystemInfo({
+      success: function (res) {
+        _this.setData({
+          sliderLeft: (res.windowWidth / _this.data.tabs.length - sliderWidth) / 2,
+          sliderOffset: res.windowWidth / _this.data.tabs.length * _this.data.activeIndex
+        });
+      }
+    });
   },
   // 生命周期函数--监听页面初次渲染完成
   onReady () {
     this.getLocation()
     this.setControls()
+  },
+  // 标签卡 点击事件
+  tabClick: function (e) {
+    this.setData({
+      sliderOffset: e.currentTarget.offsetLeft,
+      activeIndex: e.currentTarget.id
+    });
   },
   // 获取当前坐标点
   getLocation () {
@@ -29,6 +57,7 @@ Page({
   setLocation (res) {
     this.setData({
       latitude: res.latitude,
+      
       longitude: res.longitude,
       markers: [
         {
@@ -84,26 +113,26 @@ Page({
   setControls () {
     let systemInfo = wx.getSystemInfoSync()
     let width = systemInfo.windowWidth
-    let height = systemInfo.windowHeight
+    let height = systemInfo.windowHeight - 50
     this.setData({
       controls: [
         {
           id: 'centerMarkerClick',
           position: {
-            top: height - height / 2 - 30,
-            left: width - width / 2 - 15,
-            width: 30,
-            height: 30
+            top: height - height / 2 - 48,
+            left: width - width / 2 - 24,
+            width: 48,
+            height: 48
           },
-          iconPath: '/resources/User Location-64.png'
+          iconPath: '/resources/mapPin-48.png'
         },
         {
           id: 'loactionClick',
           position: {
-            top: height - 60,
+            top: height - 78,
             left: 30,
-            width: 30,
-            height: 30
+            width: 48,
+            height: 48
           },
           iconPath: '/resources/Compass-48.png',
           clickable: true
@@ -126,5 +155,28 @@ Page({
         _this.setLocation(res)
       }
     })
+  },
+
+
+  showInput: function () {
+    this.setData({
+      inputShowed: true
+    });
+  },
+  hideInput: function () {
+    this.setData({
+      inputVal: "",
+      inputShowed: false
+    });
+  },
+  clearInput: function () {
+    this.setData({
+      inputVal: ""
+    });
+  },
+  inputTyping: function (e) {
+    this.setData({
+      inputVal: e.detail.value
+    });
   }
 })

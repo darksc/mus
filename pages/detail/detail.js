@@ -14,5 +14,8 @@ Page({
     setTimeout(function () {
       wx.hideLoading()
     }, 2000)
+  },
+  onPullDownRefresh: function () {
+    wx.stopPullDownRefresh()
   }
 })

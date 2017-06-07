@@ -1,4 +1,4 @@
 .detail-wrap .detail-title {
-  height: 20pt;
-  line-height: 20pt;
+  height: 20px;
+  line-height: 20px;
 }
