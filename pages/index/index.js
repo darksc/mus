@@ -12,10 +12,6 @@ Page({
       latitude: 39.90403,
       longitude: 116.407526
     }],
-
-    inputShowed: false,
-    inputVal: "",
-
     // 列表数据
     lists: []
   },
@@ -23,14 +19,13 @@ Page({
   onReady () {
     this.getLocation()
     this.setControls()
-
     this.getShops()
   },
   // 滚动到底部/右边，会触发 scrolltolower 事件
   scrolltolower (e) {
     console.log(e)
   },
-  // 获取商家信息
+  // 获取商家数据
   getShops(params) {
     var _this = this
     wx.request({
@@ -61,7 +56,7 @@ Page({
       }
     })
   },
-  // 标记周边坐标点
+  // 标记商家坐标点
   setLocation (res) {
     this.setData({
       latitude: res.latitude,
@@ -112,13 +107,13 @@ Page({
   setControls () {
     let systemInfo = wx.getSystemInfoSync()
     let width = systemInfo.windowWidth
-    let height = systemInfo.windowHeight - 50
+    let height = systemInfo.windowHeight
     this.setData({
       controls: [
         {
           id: 'loactionClick',
           position: {
-            top: height - (height / 2) - 34,
+            top: height * .4 - 58,
             left: 10,
             width: 48,
             height: 48
