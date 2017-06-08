@@ -29,14 +29,14 @@
           <view class="shop-list-address">{{item.address}}</view>
 
           <view class="shop-list-tags">
-            <view class="shop-list-tag-red">折</view>
-            <view class="shop-list-tag-yellow">活动</view>
-            <view class="shop-list-tag-green">赛</view>
+            <view class="shop-list-tag-red" wx:if="{{item.discount}}">折</view>
+            <view class="shop-list-tag-yellow" wx:if="{{item.event}}">活动</view>
+            <view class="shop-list-tag-green" wx:if="{{item.game}}">赛</view>
           </view>
 
           <view class="shop-list-right">
-            <view class="shop-list-distance">{{item.distance}}km</view>
             <view class="shop-list-price">{{item.price}}元</view>
+            <view class="shop-list-distance">{{item.distance}}km</view>
           </view>
 
           <view class="shop-list-time">

@@ -32,8 +32,18 @@
   color: #FD585B;
   font-size: 18px;
 }
+.shop-list-distance {
+  display: inline-block;
+  padding: 2px;
+  margin-right: 3px;
+  color: #96979A;
+  font-size: 13px;
+  line-height: 13px;
+  border-radius: 3px;
+  background: #F8F8F8;
+}
 .shop-list-address {
-  color: #B6C2C7;
+  color: #96979A;
   font-size: 13px;
   width: 75%;
 }
@@ -67,7 +77,7 @@
 .shop-list-right {
   position: absolute;
   right: 10px;
-  top: 20px;
+  top: 15px;
 }
 
 .shop-list-time {
@@ -75,6 +85,6 @@
   margin-top: 5px;
   padding-top: 5px;
   font-size: 13px;
-  color: #B6C2C7;
+  color: #96979A;
   line-height: 13px;
 }
