@@ -6,9 +6,9 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "backgroundColor": "#2284AE",
-    "navigationBarBackgroundColor": "#2284AE",
-    "navigationBarTitleText": "村级食品",
+    "backgroundColor": "#4E92DF",
+    "navigationBarBackgroundColor": "#4E92DF",
+    "navigationBarTitleText": "钓鱼导",
     "navigationBarTextStyle": "#000"
   }
 }

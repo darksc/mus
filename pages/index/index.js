@@ -1,6 +1,5 @@
 //index.js
 var app = getApp()
-var sliderWidth = 96;
 
 Page({
   // 页面初始数据
@@ -14,27 +13,11 @@ Page({
       longitude: 116.407526
     }],
 
-    tabs: ["地图", "列表"],
-    activeIndex: 0,
-    sliderOffset: 0,
-    sliderLeft: 0,
-
     inputShowed: false,
     inputVal: "",
 
     // 列表数据
     lists: []
-  },
-  onLoad: function () {
-    var _this = this;
-    wx.getSystemInfo({
-      success: function (res) {
-        _this.setData({
-          sliderLeft: (res.windowWidth / _this.data.tabs.length - sliderWidth) / 2,
-          sliderOffset: res.windowWidth / _this.data.tabs.length * _this.data.activeIndex
-        });
-      }
-    });
   },
   // 生命周期函数--监听页面初次渲染完成
   onReady () {
@@ -43,6 +26,11 @@ Page({
 
     this.getShops()
   },
+  // 滚动到底部/右边，会触发 scrolltolower 事件
+  scrolltolower (e) {
+    console.log(e)
+  },
+  // 获取商家信息
   getShops(params) {
     var _this = this
     wx.request({
@@ -62,13 +50,6 @@ Page({
         }
       }
     })
-  },
-  // 标签卡 点击事件
-  tabClick: function (e) {
-    this.setData({
-      sliderOffset: e.currentTarget.offsetLeft,
-      activeIndex: e.currentTarget.id
-    });
   },
   // 获取当前坐标点
   getLocation () {
@@ -120,15 +101,6 @@ Page({
   },
   // 地区变化事件处理
   regionchange (e) {
-    let _this = this
-    if (e.type === 'end') {
-      let map = wx.createMapContext('map')
-      map.getCenterLocation({
-        success: function (res) {
-          _this.setLocation(res)
-        }
-      })
-    }
   },
   // 标记点点击事件处理
   markertap (e) {
@@ -144,24 +116,14 @@ Page({
     this.setData({
       controls: [
         {
-          id: 'centerMarkerClick',
-          position: {
-            top: height - height / 2 - 48,
-            left: width - width / 2 - 24,
-            width: 48,
-            height: 48
-          },
-          iconPath: '/resources/mapPin-48.png'
-        },
-        {
           id: 'loactionClick',
           position: {
-            top: height - 78,
-            left: 30,
+            top: height - (height / 2) - 34,
+            left: 10,
             width: 48,
             height: 48
           },
-          iconPath: '/resources/Compass-48.png',
+          iconPath: '/resources/Radar-48.png',
           clickable: true
         }
       ]
@@ -182,28 +144,5 @@ Page({
         _this.setLocation(res)
       }
     })
-  },
-
-
-  showInput: function () {
-    this.setData({
-      inputShowed: true
-    });
-  },
-  hideInput: function () {
-    this.setData({
-      inputVal: "",
-      inputShowed: false
-    });
-  },
-  clearInput: function () {
-    this.setData({
-      inputVal: ""
-    });
-  },
-  inputTyping: function (e) {
-    this.setData({
-      inputVal: e.detail.value
-    });
   }
 })
