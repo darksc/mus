@@ -17,12 +17,19 @@
 
     <!-- 列表 -->
     <scroll-view 
-    scroll-y  
+    scroll-y
+    scroll-with-animation="true"
     class="map-list-wrap"
-    bindscrolltolower="scrolltolower">
+    bindscrolltolower="scrolltolower"
+    scroll-into-view="{{scrollInto}}">
       <view class="map-list">
-        <block wx:for="{{lists}}" wx:key="*this.name">
-        <view class="shop-list">
+        <view 
+        wx:for="{{lists}}" 
+        wx:key="*this.name" 
+        id="{{item.id}}" 
+        class="shop-list"
+        data-listid="{{item.id}}"
+        bindtap="listTab">
 
           <view class="shop-list-title">{{item.name}}</view>
 
@@ -30,7 +37,7 @@
 
           <view class="shop-list-tags">
             <view class="shop-list-tag-red" wx:if="{{item.discount}}">折</view>
-            <view class="shop-list-tag-yellow" wx:if="{{item.event}}">活动</view>
+            <view class="shop-list-tag-yellow" wx:if="{{item.event}}">活</view>
             <view class="shop-list-tag-green" wx:if="{{item.game}}">赛</view>
           </view>
 
@@ -44,7 +51,6 @@
           </view>
 
         </view>
-      </block>
       </view>
     </scroll-view>
     <!-- 列表 结束 -->

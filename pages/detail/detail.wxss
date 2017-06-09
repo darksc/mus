@@ -1,4 +1,103 @@
-.detail-wrap .detail-title {
-  height: 20px;
-  line-height: 20px;
+.detail-title {
+  font-size: 18px;
+}
+.detail-swiper {
+  box-shadow: 0 10px 50px -10px #999;
+}
+.detail-image {
+  width: 100%;
+  height: 150px;
+}
+.detail-price {
+  font-size: 18px;
+  color: #FD585B;
+}
+.detail-distance {
+  color: #9DA8B3;
+  font-size: 17px;
+}
+.detail-navigation {
+  position: absolute;
+  right: 10px;
+  top: 15px;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  background: #FAE6E8;
+  border-radius: 50px;
+}
+.detail-navigation image {
+  width: 30px;
+  height: 30px;
+  margin-top: 10px;
+}
+.detail-content {
+  position: relative;
+  padding: 15px 10px;
+  background: #fff;
+  margin: 20px 10px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 30px -10px #999;
+  overflow: hidden;
+}
+.detail-line {
+  position: relative;
+  font-size: 14px;
+  border-bottom: 1px solid #F0F0F0;
+  line-height: 2;
+  color: #96979A;
+}
+.detail-icon {
+  vertical-align: middle;
+  height: 17px;
+  width: 17px;
+  margin-right: 5px;
+}
+.detail-icon-go-phone {
+  position: absolute;
+  right: 10px;
+  top: 0;
+  background: #BAE0BD;
+  height: 25px;
+  width: 25px;
+  text-align: center;
+  border-radius: 25px;
+}
+.detail-icon-go-phone image {
+  margin-top: 4px;
+  height: 17px;
+  width: 17px;
+}
+.detail-content .detail-line:last-child {
+  border-bottom: none;
+}
+.detail-tags .tags {
+  display: inline-block;
+  padding: 2px;
+  margin-right: 5px;
+  color: #fff;
+  font-size: 13px;
+  line-height: 13px;
+  border-radius: 3px;
+}
+
+.detail-tags-info {
+  color: #96979A !important;
+  overflow:hidden;
+}
+
+.shop-list-tag-red {
+  background: #FD585B;
+}
+
+.shop-list-tag-yellow {
+  background: #FBAA5C;
+}
+
+.shop-list-tag-green {
+  background: #58E2C2;
+}
+
+.shop-list-tag-blue {
+  background: #4E92DF;
 }

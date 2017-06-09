@@ -1,13 +1,59 @@
 <view class="container detail-wrap">
-  <view class="detail-title">
-    {{title}}
-  </view>
-  <swiper>
+  <swiper class="detail-swiper">
     <swiper-item>
-      <image src="http://img.ui.cn/data/file/7/9/7/1191797.png" class="slide-image" width="355" height="150"/>
+      <image 
+      src="https://ws3.sinaimg.cn/large/6a39992dgw1f9ba4hjxhsj218g0p0gqy.jpg" 
+      mode="widthFix"
+      class="detail-image"/>
     </swiper-item>
     <swiper-item>
-      <image src="http://img.ui.cn/data/file/7/9/7/1191797.png" class="slide-image" width="355" height="150"/>
+      <image 
+      src="https://ws3.sinaimg.cn/large/6a39992dgw1f9ba4hjxhsj218g0p0gqy.jpg" 
+      mode="widthFix"
+      class="detail-image"/>
     </swiper-item>
   </swiper>
+
+  <view class="detail-content">
+    <view class="detail-price">{{shop.price}}元</view>
+    <view class="detail-distance">{{shop.distance}}km</view>
+
+    <view class="detail-navigation" bindtap="naviTab">
+      <image src="/resources/navigation.png"></image>
+    </view>
+  </view>
+
+  <view class="detail-content">
+    <view class="detail-line">
+      <image class="detail-icon" src="/resources/phone.png"></image>{{shop.phone}}
+      <view class="detail-icon-go-phone" bindtap="phoneTab">
+        <image src="/resources/go-phone.png"></image>
+      </view>
+    </view>
+    <view class="detail-line">
+      <image class="detail-icon" src="/resources/address.png"></image>{{shop.address}}
+    </view>
+    <view class="detail-line">
+      <image class="detail-icon" src="/resources/time.png"></image>放鱼时间：{{shop.time}}
+    </view>
+    <view class="detail-line">
+      <image class="detail-icon" src="/resources/nexttime.png"></image>下次放鱼：{{shop.nexttime}}
+    </view>
+  </view>
+
+  <view class="detail-content" wx:if="{{shop.discount || shop.event || shop.game}}">
+    <view class="detail-tags" wx:if="{{shop.discount}}">
+      <view class="tags shop-list-tag-red">打折</view>
+      <view class="detail-tags-info">{{shop.discountInfo}}</view>
+    </view>
+
+    <view class="detail-tags" wx:if="{{shop.event}}">
+      <view class="tags shop-list-tag-yellow">活动</view>
+      <view class="detail-tags-info">{{shop.eventInfo}}</view>
+    </view>
+    <view class="detail-tags" wx:if="{{shop.game}}">
+      <view class="tags shop-list-tag-green">比赛</view>
+      <view class="detail-tags-info">{{shop.gameInfo}}</view>
+    </view>
+  </view>
 </view>

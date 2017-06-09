@@ -1,10 +1,14 @@
 /**app.wxss**/
-@import 'resources/weui.wxss';
-
 page {
   height: 100%;
   background: #F7F8FB;
   color: #4E4E4E;
+
+  line-height: 1.6;
+  font-family: -apple-system-font, "Helvetica Neue", sans-serif;
+}
+icon {
+  vertical-align: middle;
 }
 .container {
   height: 100%;
