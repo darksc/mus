@@ -8,26 +8,21 @@ Page({
     longitude: 116.407526,
     controls: [],
     markers: [],
-
-    inputShowed: false,
-    inputVal: "",
-
     // 列表数据
     lists: [],
-    scrollInto: 'mus-5'
+    scrollInto: ''
   },
   // 生命周期函数--监听页面初次渲染完成
   onReady () {
     this.getLocation()
     this.setControls()
-
     this.getShops()
   },
   // 滚动到底部/右边，会触发 scrolltolower 事件
   scrolltolower (e) {
     console.log(e)
   },
-  // 获取商家信息
+  // 获取商家数据
   getShops(params) {
     var _this = this
     wx.request({
