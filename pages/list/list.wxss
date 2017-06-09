@@ -1,0 +1,90 @@
+/**index.wxss**/
+.map-wrap {
+  height: 40%;
+  overflow: hidden;
+  box-shadow: 0 10px 50px -10px #999;
+}
+.map-wrap #map {
+  height: 100%;
+  width: 100%;
+}
+.map-list-wrap {
+  height: 60%;
+}
+.map-list {
+  margin: 30px 10px;
+  box-sizing: border-box;
+}
+.shop-list {
+  position: relative;
+  padding: 15px 10px;
+  background: #fff;
+  margin: 20px 0;
+  border-radius: 5px;
+  box-shadow: 5px 5px 30px -10px #999;
+}
+
+.shop-list-title {
+  font-size: 17px;
+}
+
+.shop-list-price {
+  color: #FD585B;
+  font-size: 18px;
+}
+.shop-list-distance {
+  display: inline-block;
+  padding: 2px;
+  margin-right: 3px;
+  color: #96979A;
+  font-size: 13px;
+  line-height: 13px;
+  border-radius: 3px;
+  background: #F8F8F8;
+}
+.shop-list-address {
+  color: #96979A;
+  font-size: 13px;
+  width: 75%;
+}
+
+.shop-list-tags view {
+  display: inline-block;
+  padding: 2px;
+  margin-right: 3px;
+  color: #fff;
+  font-size: 13px;
+  line-height: 13px;
+  border-radius: 3px;
+}
+
+.shop-list-tag-red {
+  background: #FD585B;
+}
+
+.shop-list-tag-yellow {
+  background: #FBAA5C;
+}
+
+.shop-list-tag-green {
+  background: #58E2C2;
+}
+
+.shop-list-tag-blue {
+  background: #4E92DF;
+}
+
+.shop-list-right {
+  position: absolute;
+  right: 10px;
+  top: 15px;
+}
+
+.shop-list-time {
+  border-top: 1px solid #F0F0F0;
+  margin-top: 5px;
+  padding-top: 5px;
+  font-size: 13px;
+  color: #96979A;
+  line-height: 13px;
+}

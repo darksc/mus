@@ -1,57 +1,15 @@
 <!--index.wxml-->
-<view class="container index-wrap">
-    <!-- 地图 -->
-    <view class="map-wrap">
-      <map id="map" 
-      longitude="{{longitude}}" 
-      latitude="{{latitude}}" 
-      markers="{{markers}}" 
-      controls="{{controls}}" 
-      scale="10" 
-      bindcontroltap="controltap" 
-      bindmarkertap="markertap" 
-      bindregionchange="regionchange" 
-      show-location></map>
-    </view>
-    <!-- 地图 结束 -->
-
-    <!-- 列表 -->
-    <scroll-view 
-    scroll-y
-    scroll-with-animation="true"
-    class="map-list-wrap"
-    bindscrolltolower="scrolltolower"
-    scroll-into-view="{{scrollInto}}">
-      <view class="map-list">
-        <view 
-        wx:for="{{lists}}" 
-        wx:key="*this.name" 
-        id="{{item.id}}" 
-        class="shop-list"
-        data-listid="{{item.id}}"
-        bindtap="listTab">
-
-          <view class="shop-list-title">{{item.name}}</view>
-
-          <view class="shop-list-address">{{item.address}}</view>
-
-          <view class="shop-list-tags">
-            <view class="shop-list-tag-red" wx:if="{{item.discount}}">折</view>
-            <view class="shop-list-tag-yellow" wx:if="{{item.event}}">活</view>
-            <view class="shop-list-tag-green" wx:if="{{item.game}}">赛</view>
-          </view>
-
-          <view class="shop-list-right">
-            <view class="shop-list-price">{{item.price}}元</view>
-            <view class="shop-list-distance">{{item.distance}}km</view>
-          </view>
-
-          <view class="shop-list-time">
-          放鱼时间: {{item.time}} 下次放鱼: {{item.time}}
-          </view>
-
-        </view>
+<view class="container">
+  <view class="main-wrap">
+    <navigator url="url">
+      <view class="main-shop">
+        我是商家
       </view>
-    </scroll-view>
-    <!-- 列表 结束 -->
+    </navigator>
+    <navigator url="../list/list">
+      <view class="main-user">
+        我是用户
+      </view>
+    </navigator>
+  </view>
 </view>
