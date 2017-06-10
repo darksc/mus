@@ -1,0 +1,14 @@
+<!--new.wxml-->
+<view class="container">
+  <!-- 地图 -->
+  <view class="map-wrap">
+    <map id="map"
+    longitude="{{longitude}}"
+    latitude="{{latitude}}"
+    controls="{{controls}}"
+    scale="10"
+    bindcontroltap="controltap"
+    bindregionchange="regionchange"
+    show-location></map>
+  </view>
+</view>

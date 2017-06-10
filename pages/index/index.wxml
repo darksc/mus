@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <view class="container">
   <view class="main-wrap">
-    <navigator url="url">
+    <navigator url="../new/new">
       <view class="main-shop">
         我是商家
       </view>

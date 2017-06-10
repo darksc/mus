@@ -1,0 +1,11 @@
+/* new.wxss */
+.map-wrap {
+  height: 40%;
+  overflow: hidden;
+  box-shadow: 0 10px 50px -10px #999;
+}
+
+.map-wrap #map {
+  height: 100%;
+  width: 100%;
+}
