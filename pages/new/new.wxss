@@ -9,3 +9,33 @@
   height: 100%;
   width: 100%;
 }
+
+.new-wrap {
+  height: 60%;
+}
+.new-panel-wrap {
+  margin: 30px 10px;
+  box-sizing: border-box;
+}
+.new-panel {
+  position: relative;
+  padding: 15px 10px;
+  background: #fff;
+  margin: 20px 0;
+  border-radius: 5px;
+  box-shadow: 5px 5px 30px -10px #999;
+}
+
+.new-icon {
+  vertical-align: middle;
+  height: 17px;
+  width: 17px;
+  margin-right: 5px;
+}
+.new-line {
+  line-height: 2
+}
+
+.new-line input {
+  display: inline-block
+}
