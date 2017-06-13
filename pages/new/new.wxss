@@ -26,16 +26,6 @@
   box-shadow: 5px 5px 30px -10px #999;
 }
 
-.new-icon {
-  vertical-align: middle;
-  height: 17px;
-  width: 17px;
-  margin-right: 5px;
-}
-.new-line {
-  line-height: 2
-}
-
-.new-line input {
-  display: inline-block
+.zan-cell picker {
+  width: 100%;
 }

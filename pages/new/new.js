@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    time: '',
+    nexttime: ''
   },
 
   /**
@@ -32,6 +33,22 @@ Page({
           latitude: res.latitude,
           longitude: res.longitude
         })
+      }
+    })
+  },
+
+  bindTimeChange (e) {
+    this.setData({
+      time: e.detail.value
+    })
+  },
+
+  uploadImg () {
+    wx.chooseImage({
+      count: '5',
+      sizeType: 'compressed',
+      success: function (res) {
+        console.log(res)
       }
     })
   }

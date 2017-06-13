@@ -5,15 +5,69 @@
     <map id="map" longitude="{{longitude}}" latitude="{{latitude}}" controls="{{controls}}" scale="10" bindcontroltap="controltap" bindregionchange="regionchange" show-location></map>
   </view>
 
-  <scroll-view 
-  scroll-y 
-  scroll-with-animation="true" 
-  class="new-wrap" 
-  bindscrolltolower="scrolltolower" 
-  scroll-into-view="{{scrollInto}}">
+  <scroll-view scroll-y scroll-with-animation="true" class="new-wrap" bindscrolltolower="scrolltolower">
     <view class="new-panel-wrap">
       <view class="new-panel">
+        <view class="zan-form">
+          <view class="zan-cell zan-form__item">
+            <text class="zan-form__title">渔场名称：</text>
+            <input class="zan-form__input zan-cell__bd" placeholder="请输入渔场名称" />
+          </view>
+          <view class="zan-cell zan-form__item">
+            <text class="zan-form__title">渔场价格：</text>
+            <input class="zan-form__input zan-cell__bd" placeholder="请输入渔场价格" />
+          </view>
+          <view class="zan-cell zan-form__item">
+            <text class="zan-form__title">联系电话：</text>
+            <input class="zan-form__input zan-cell__bd" type="number" maxlength="20" placeholder="请输入联系电话" />
+          </view>
+
+          <view class="zan-cell zan-form__item">
+            <button type="primary" bindtap="uploadImg">上传图片</button>
+          </view>
+
+        </view>
       </view>
+
+      <view class="new-panel">
+        <view class="zan-form">
+          <view class="zan-cell zan-form__item">
+            <picker mode="date" value="{{time}}" bindchange="bindTimeChange">
+              <view class="picker">
+                放鱼时间： {{time}}
+              </view>
+            </picker>
+          </view>
+          <view class="zan-cell zan-form__item">
+            <picker mode="date" value="{{nexttime}}" bindchange="bindTimeChange">
+              <view class="picker">
+                下次放鱼： {{time}}
+              </view>
+            </picker>
+          </view>
+        </view>
+      </view>
+
+      <view class="new-panel">
+        <view class="zan-form">
+          <view class="zan-cell zan-form__item">
+            <text class="zan-form__title">折扣：</text>
+            <input class="zan-form__input zan-cell__bd" placeholder="请输入折扣详情" />
+            <switch checked bindchange="switch1Change"/>
+          </view>
+          <view class="zan-cell zan-form__item">
+            <text class="zan-form__title">活动：</text>
+            <input class="zan-form__input zan-cell__bd" placeholder="请输入活动详情" />
+            <switch checked bindchange="switch1Change"/>
+          </view>
+          <view class="zan-cell zan-form__item">
+            <text class="zan-form__title">赛事：</text>
+            <input class="zan-form__input zan-cell__bd" placeholder="请输入赛事详情" />
+            <switch checked bindchange="switch1Change"/>
+          </view>
+        </view>
+      </view>
+
     </view>
   </scroll-view>
 </view>
