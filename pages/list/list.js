@@ -65,7 +65,7 @@ Page({
   },
   // 获取当前坐标点
   getLocation () {
-    let _this = this
+    var _this = this
     wx.getLocation({
       type: 'gcj02 ',
       success(res) {
@@ -94,9 +94,9 @@ Page({
   },
   // 配置地图控件
   setControls () {
-    let systemInfo = wx.getSystemInfoSync()
-    let width = systemInfo.windowWidth
-    let height = systemInfo.windowHeight
+    var systemInfo = wx.getSystemInfoSync()
+    var width = systemInfo.windowWidth
+    var height = systemInfo.windowHeight
     this.setData({
       controls: [
         {
@@ -119,7 +119,7 @@ Page({
   },
   // 定位到我的位置
   loactionClick () {
-    let map = wx.createMapContext('map')
+    var map = wx.createMapContext('map')
     map.moveToLocation()
   }
 })

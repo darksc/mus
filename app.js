@@ -9,7 +9,7 @@ App({
     wx.setStorageSync('logs', logs)
 
     this.getUserOpenId((err, openId) => {
-      console.log(openId)
+      console.log('openId: ' + openId)
     })
   },
   getUserInfo:function(cb){
@@ -41,7 +41,7 @@ App({
     var self = this
 
     if (self.globalData.openid) {
-      callback(null, self.globalData.openid)
+      callback('拉取本地缓存openid', self.globalData.openid)
     } else {
       wx.login({
         success: function (data) {
@@ -54,7 +54,7 @@ App({
             success: function (res) {
               console.log('拉取openid成功', res)
               self.globalData.openid = res.data.openid
-              callback(null, self.globalData.openid)
+              callback('拉取openid成功', self.globalData.openid)
             },
             fail: function (res) {
               console.log('拉取用户openid失败，将无法正常使用开放接口等服务', res)

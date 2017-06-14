@@ -2,7 +2,15 @@
 <view class="container">
   <!-- 地图 -->
   <view class="map-wrap">
-    <map id="map" longitude="{{longitude}}" latitude="{{latitude}}" controls="{{controls}}" scale="10" bindcontroltap="controltap" bindregionchange="regionchange" show-location></map>
+    <map id="map" 
+    markers="{{markers}}"
+    longitude="{{longitude}}" 
+    latitude="{{latitude}}" 
+    controls="{{controls}}" 
+    scale="10"
+    bindcontroltap="controltap" 
+    bindmarkertap="makertap"
+    show-location></map>
   </view>
 
   <scroll-view scroll-y scroll-with-animation="true" class="new-wrap" bindscrolltolower="scrolltolower">
@@ -12,6 +20,10 @@
           <view class="zan-cell zan-form__item">
             <text class="zan-form__title">渔场名称：</text>
             <input class="zan-form__input zan-cell__bd" placeholder="请输入渔场名称" />
+          </view>
+          <view class="zan-cell zan-form__item">
+            <text class="zan-form__title">渔场地址：</text>
+            <input class="zan-form__input zan-cell__bd" value="{{rgcData}}" placeholder="请输入渔场价格" />
           </view>
           <view class="zan-cell zan-form__item">
             <text class="zan-form__title">渔场价格：</text>
