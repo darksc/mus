@@ -47,7 +47,7 @@ App({
         success: function (data) {
           console.log(data)
           wx.request({
-            url: openIdUrl,
+            url: 'http://127.0.0.1:3000/getOpenId',
             data: {
               code: data.code
             },

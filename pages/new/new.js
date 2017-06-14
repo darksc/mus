@@ -35,6 +35,7 @@ Page({
     this.setControls()
   },
 
+  // 加载百度地图
   loadBMap(latitude, longitude) {
     var _this = this
     // 发起regeocoding检索请求 
@@ -53,6 +54,7 @@ Page({
       iconTapPath: '../../resources/Rating-48.png'
     })
   },
+  // marker 点击事件
   makertap: function (e) {
     var _this = this
     var id = e.markerId
@@ -90,7 +92,7 @@ Page({
   // 时间控件
   bindTimeChange (e) {
     this.setData({
-      time: e.detail.value
+      [e.currentTarget.dataset.type]: e.detail.value
     })
   },
 

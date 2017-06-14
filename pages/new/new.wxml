@@ -44,16 +44,16 @@
       <view class="new-panel">
         <view class="zan-form">
           <view class="zan-cell zan-form__item">
-            <picker mode="date" value="{{time}}" bindchange="bindTimeChange">
+            <picker mode="date" data-type="time" value="{{time}}" bindchange="bindTimeChange">
               <view class="picker">
                 放鱼时间： {{time}}
               </view>
             </picker>
           </view>
           <view class="zan-cell zan-form__item">
-            <picker mode="date" value="{{nexttime}}" bindchange="bindTimeChange">
+            <picker mode="date" data-type="nexttime" value="{{nexttime}}" bindchange="bindTimeChange">
               <view class="picker">
-                下次放鱼： {{time}}
+                下次放鱼： {{nexttime}}
               </view>
             </picker>
           </view>
@@ -79,7 +79,7 @@
           </view>
         </view>
       </view>
-
+      <button type="primary">保存</button>
     </view>
   </scroll-view>
 </view>
