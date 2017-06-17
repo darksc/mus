@@ -80,7 +80,7 @@
           </view>
         </view>
       </view>
-      <button type="primary">保存</button>
+      <button type="primary" bindtap="save">保存</button>
     </view>
   </scroll-view>
 </view>

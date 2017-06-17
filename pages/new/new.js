@@ -146,5 +146,13 @@ Page({
     }
     map.moveToLocation()
     
+  },
+  // 保存
+  save () {
+    wx.showToast({
+      title: '保存成功',
+      icon: 'success',
+      duration: 2000
+    })
   }
 })
