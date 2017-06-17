@@ -16,7 +16,8 @@ Page({
     latitude: '',
     longitude: '',
     controls: [],
-    rgcData: ''
+    rgcData: '',
+    images: []
   },
 
   /**
@@ -100,11 +101,15 @@ Page({
 
   // 图片上传
   uploadImg () {
+    var _this = this
     wx.chooseImage({
       count: '5',
       sizeType: 'compressed',
       success: function (res) {
-        console.log('上传成功: ' + res)
+        _this.setData({
+          images: res.tempFiles
+        })
+        console.log(res.tempFiles)
       }
     })
   },

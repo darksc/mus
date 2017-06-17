@@ -33,11 +33,12 @@
             <text class="zan-form__title">联系电话：</text>
             <input class="zan-form__input zan-cell__bd" type="number" maxlength="20" placeholder="请输入联系电话" />
           </view>
-
           <view class="zan-cell zan-form__item">
             <button type="primary" bindtap="uploadImg">上传图片</button>
           </view>
-
+        </view>
+        <view class="new-images">
+          <image wx:for="{{images}}" mode="aspectFill" src="{{item.path}}"></image>
         </view>
       </view>
 

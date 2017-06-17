@@ -29,3 +29,8 @@
 .zan-cell picker {
   width: 100%;
 }
+
+.new-images image {
+  width: 100%;
+  height: 150px;
+}
