@@ -51,7 +51,9 @@ Page({
         console.log('检索失败: ' + data)
       },
       iconPath: '../../resources/Rating-48.png',
-      iconTapPath: '../../resources/Rating-48.png'
+      iconTapPath: '../../resources/Rating-48.png',
+      width: 28,
+      height: 28
     })
   },
   // marker 点击事件
@@ -65,7 +67,7 @@ Page({
   showSearchInfo: function (data, i) {
     var _this = this
     _this.setData({
-      rgcData: data[i].address + data[i].desc + data[i].business
+      rgcData: data[i].address + data[i].desc
     })
   },
 
