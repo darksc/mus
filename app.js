@@ -53,7 +53,7 @@ App({
             },
             success: function (res) {
               console.log('拉取openid成功', res)
-              self.globalData.openid = res.data.openid
+              self.globalData.openid = res.data.data.openid
               callback('拉取openid成功', self.globalData.openid)
             },
             fail: function (res) {
