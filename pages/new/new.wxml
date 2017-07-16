@@ -13,7 +13,7 @@
     show-location></map>
   </view>
 
-  <scroll-view scroll-y scroll-with-animation="true" class="new-wrap" bindscrolltolower="scrolltolower">
+  <scroll-view scroll-y scroll-with-animation="true" class="new-wrap">
     <view class="new-panel-wrap">
       <view class="new-panel">
         <view class="zan-form">
@@ -38,7 +38,7 @@
           </view>
         </view>
         <view class="new-images">
-          <image wx:for="{{images}}" mode="aspectFill" src="{{item.path}}"></image>
+          <image wx:for="{{images}}" wx:key="{{item.path}}" mode="aspectFill" src="{{item.path}}"></image>
         </view>
       </view>
 
